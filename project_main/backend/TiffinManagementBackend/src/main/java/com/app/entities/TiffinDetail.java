@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.criteria.Order;
+//import javax.persistence.criteria.Order;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,10 +46,10 @@ public class TiffinDetail {
 	@Column(name = "description")
 	private String description;
 	
-	/*
-	 * @OneToMany(mappedBy = "tiffinDetails", cascade = CascadeType.ALL) private
-	 * List<Order> order;
-	 */
+	
+	  @OneToMany(mappedBy = "tiffinDetails", cascade = CascadeType.ALL)
+	  private List<Order> order;
+	 
 	
 	public TiffinDetail(int tiffinId) {
 		this.tiffinId=tiffinId;

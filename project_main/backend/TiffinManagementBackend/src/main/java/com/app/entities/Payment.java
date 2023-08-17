@@ -49,9 +49,9 @@ public class Payment {
 	@Column(name = "payment_time")
 	private Date paymentTime;
 
-	/*
-	 * @OneToOne(mappedBy = "payment",fetch = FetchType.LAZY) private Order order;
-	 */
+	
+	  @OneToOne(mappedBy = "payment",fetch = FetchType.LAZY) private Order order;
+	 
 	
 	
 }

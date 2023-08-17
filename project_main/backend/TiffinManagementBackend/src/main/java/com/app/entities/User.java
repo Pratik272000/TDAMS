@@ -48,11 +48,11 @@ public class User {
 	@Column(name = "aadhar_no")
 	private String aadharNo;
 
-//	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-//	private List<Order> orderList;
-//
-//	@OneToMany(mappedBy = "deliveryBoy")
-//	private List<DaywiseOrder> daywiseOrder;
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	private List<Order> orderList;
+
+	@OneToMany(mappedBy = "deliveryBoy")
+	private List<DaywiseOrder> daywiseOrder;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userId")

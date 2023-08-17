@@ -54,13 +54,13 @@ public class Order {
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	/*@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "tiffin_id")
 	private TiffinDetail tiffinDetails;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "order_id")
-	private Payment payment; */
+	private Payment payment; 
 
 	@OneToOne(mappedBy = "order",fetch = FetchType.LAZY)
 	private DaywiseOrder daywiseOrder;
