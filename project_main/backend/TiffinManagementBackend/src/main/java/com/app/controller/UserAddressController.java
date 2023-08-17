@@ -31,7 +31,7 @@ public class UserAddressController {
 			return Response.error("Please add Address");
 		return Response.success(userAddressDto);
 	}
-	//postMaping for add user adress
+	
 	@PostMapping("/user/userAddress/add")
 	public ResponseEntity<?> addUserAddress(@RequestBody UserAddressDto dto) {
 		System.out.println(dto.getLocationId() + "  sas");
