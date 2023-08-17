@@ -1,5 +1,8 @@
 package com.app.services;
 
+import java.util.Collections;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,4 +26,15 @@ public class UserService {
 		
 		return converter.toUserDto(user);
 	}
+	public Map<String, Object> editUser(int userId, UserDto dto) {
+		User user = userDao.findByUserId(userId);
+		user.setUserName(dto.getUserName());
+		user.setEmail(dto.getEmail());
+		user.setPhone(dto.getPhone());
+		user.setRole(dto.getRole());
+		user.setAadharNo(dto.getAadharNo());
+		user = userDao.save(user);
+		return Collections.singletonMap("userChanged", 1);
+	}
+	
 }

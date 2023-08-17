@@ -11,14 +11,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class UserDto {
+public class DeliveryAddressDto {
 
-	private int userId;
-	private String userName;
-	private String email;
-	private String password;
-	private String phone;
-	private String role;
-	private String aadharNo;
-	
+	private int locationId;
+	private String deliveryArea;
+	private String city;
+	private int pinCode;
+
 }
