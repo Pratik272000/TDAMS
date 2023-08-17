@@ -23,6 +23,7 @@ public class UserAddressController {
 	@Autowired
 	UserAddressService userAddressService;
 
+//get user Address
 	@GetMapping("/user/userAddress/{id}")
 	public ResponseEntity<?> displayUserAddressByUserId(@PathVariable("id") int id) {
 		System.out.println(id);
@@ -31,7 +32,8 @@ public class UserAddressController {
 			return Response.error("Please add Address");
 		return Response.success(userAddressDto);
 	}
-	
+	// add user Address
+
 	@PostMapping("/user/userAddress/add")
 	public ResponseEntity<?> addUserAddress(@RequestBody UserAddressDto dto) {
 		System.out.println(dto.getLocationId() + "  sas");
