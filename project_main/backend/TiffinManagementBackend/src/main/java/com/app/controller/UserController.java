@@ -34,6 +34,11 @@ public class UserController {
 			return Response.success(result);
 		}
 
+
+		@GetMapping("/roles")
+		public ResponseEntity<?> getAllRoles() {
+			return Response.success(userService.getUserRoles());
+		}
 	  
 	  
 	  

@@ -3,6 +3,8 @@ package com.app.dtos;
 import org.springframework.stereotype.Component;
 
 import com.app.entities.DeliveryAddress;
+import com.app.entities.Order;
+import com.app.entities.TiffinDetail;
 import com.app.entities.User;
 import com.app.entities.UserAddress;
 
@@ -49,5 +51,29 @@ public class DtoEntityConverter {
 		user.setRole(userdto.getRole());
 		user.setUserName(userdto.getUserName());
 		return user;
+	}
+
+	public OrderDto toOrderDto(Order entity) {
+		OrderDto dto = new OrderDto();
+		dto.setOrderId(entity.getOrderId());
+	//	dto.setUserId(entity.getUser().getUserId());
+		dto.setStartDate(entity.getStartDate());
+		dto.setEndDate(entity.getEndDate());
+		dto.setTotalDays(entity.getTotalDays());
+		dto.setTotalAmount(entity.getTotalAmount());
+		dto.setTiffinId(entity.getTiffinDetails().getTiffinId());
+		return dto;
+	}
+
+	public Order userOrderToOrder(OrderDto orderdto) {
+		Order order = new Order();
+		order.setStartDate(orderdto.getStartDate());
+		order.setEndDate(orderdto.getEndDate());
+		order.setTotalAmount(orderdto.getTotalAmount());
+//		order.setOrderId(userdto.getOrder_id());
+		order.setUser(new User(orderdto.getUserId()));
+		order.setTotalDays(orderdto.getTotalDays());
+		order.setTiffinDetails(new TiffinDetail(orderdto.getTiffinId()));
+		return order;
 	}
 }
