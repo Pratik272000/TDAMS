@@ -23,7 +23,7 @@ public class UserAddressController {
 	@Autowired
 	UserAddressService userAddressService;
 
-//get user Address
+//get user Add  ress
 	@GetMapping("/user/userAddress/{id}")
 	public ResponseEntity<?> displayUserAddressByUserId(@PathVariable("id") int id) {
 		System.out.println(id);
