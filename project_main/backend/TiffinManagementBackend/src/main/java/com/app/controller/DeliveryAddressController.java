@@ -19,25 +19,28 @@ import com.app.services.DeliveryAddressService;
 @CrossOrigin(origins = "*")
 @RestController
 public class DeliveryAddressController {
-     
+
+	
+	
 	@Autowired
 	DeliveryAddressService deliveryAddressService;
-	 
-	  @GetMapping("/deliveryAddress/{id}")
-	 public ResponseEntity<?> dispalyDeliveryAddressById(@PathVariable("id") int id){
-		   DeliveryAddressDto deliveryAddressDto = deliveryAddressService.findByLocationId(id);
-		   return Response.success(deliveryAddressDto);
-	 }
-	 
-	 @PostMapping("/deliveryAddress/add")
-	 public ResponseEntity<?> addDeliveryAddress(@RequestBody DeliveryAddressDto dto){
-		   Map<String , Object> result = deliveryAddressService.addDeliveryAddress(dto);  
-		   return Response.success(result);
-	 }
-	 
-	 @GetMapping("/deliveryAddress")
-	 public ResponseEntity<?> getDeliveryAddress(){
-		 List<DeliveryAddressDto> list = deliveryAddressService.findAll();
-		 return Response.success(list);
-	 }
+
+	@GetMapping("/deliveryAddress/{id}")
+	public ResponseEntity<?> displayDeliveryAddressById(@PathVariable("id") int id) {
+		DeliveryAddressDto deliveryAddressDto = deliveryAddressService.findByLocationId(id);
+		return Response.success(deliveryAddressDto);
+	}
+
+	@PostMapping("/deliveryAddress/add")
+	public ResponseEntity<?> addDeliveryAddress(@RequestBody DeliveryAddressDto dto) {
+		Map<String, Object> result = deliveryAddressService.addDeliveryAddress(dto);
+		return Response.success(result);
+	}
+
+	@GetMapping("/deliveryAddress")
+	public ResponseEntity<?> getDeliveryAddress() {
+		List<DeliveryAddressDto> list = deliveryAddressService.findAll();
+		return Response.success(list);
+	}
+
 }
