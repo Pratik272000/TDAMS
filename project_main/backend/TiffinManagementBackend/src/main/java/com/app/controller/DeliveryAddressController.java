@@ -23,7 +23,7 @@ public class DeliveryAddressController {
 	
 	
 	@Autowired
-	DeliveryAddressService deliveryAddressService;
+	public DeliveryAddressService deliveryAddressService;
 
 	@GetMapping("/deliveryAddress/{id}")
 	public ResponseEntity<?> displayDeliveryAddressById(@PathVariable("id") int id) {

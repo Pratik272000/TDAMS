@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.app.entities.DaywiseOrder;
 import com.app.entities.DeliveryAddress;
 import com.app.entities.Order;
+import com.app.entities.Payment;
 import com.app.entities.TiffinDetail;
 import com.app.entities.User;
 import com.app.entities.UserAddress;
@@ -47,16 +48,16 @@ public class DtoEntityConverter {
 		return dto;
 	}
 
-//	public PaymentDto toPaymentDto(Payment entity) {
-//		PaymentDto dto = new PaymentDto();
-//		dto.setTransactionId(entity.getTransactionId());
-//		dto.setOrderId(entity.getOrderId());
-//		dto.setPaymentStatus(entity.getPaymentStatus());
-//		dto.setPaymentTime(entity.getPaymentTime());
-//		dto.setPaymentType(entity.getPaymentType());
-//		dto.setTotalPayment(entity.getTotalPayment());
-//		return dto;
-//	}
+	public PaymentDto toPaymentDto(Payment entity) {
+		PaymentDto dto = new PaymentDto();
+		dto.setTransactionId(entity.getTransactionId());
+		dto.setOrderId(entity.getOrderId());
+		dto.setPaymentStatus(entity.getPaymentStatus());
+		dto.setPaymentTime(entity.getPaymentTime());
+		dto.setPaymentType(entity.getPaymentType());
+		dto.setTotalPayment(entity.getTotalPayment());
+		return dto;
+	}
 
 	public Order userOrderToOrder(OrderDto orderdto) {
 		Order order = new Order();

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.app.dtos.DtoEntityConverter;
 import com.app.dtos.Response;
@@ -46,7 +48,19 @@ public class TiffinDetailController {
 		return Response.success(tiffinDetailService.findAllTiffins());
 	}
 	
-	@PostMapping("/tiffin/addTiffin")
+	
+//	@PostMapping("/tiffin/addTiffin")
+//	public ResponseEntity<?> saveAlbum(TiffinFormDto tiffinDto) throws IOException {
+//		System.out.println(tiffinDto);
+//		TiffinDetail tiffin = converter.albumFormDtoToEntity(tiffinDto);
+//		String thumbnail = storageService.store(tiffinDto.getTiffinImage());
+//		tiffin.setTiffinImage(thumbnail);
+//		tiffinDetailService.saveTiffinDetails(tiffin);
+//		return Response.success(tiffin);
+//	}
+	
+	
+	@PostMapping(value="/tiffin/addTiffin",consumes="multipart/form-data")
 	public ResponseEntity<?> saveAlbum(TiffinFormDto tiffinDto) throws IOException {
 		System.out.println(tiffinDto);
 		TiffinDetail tiffin = converter.albumFormDtoToEntity(tiffinDto);
