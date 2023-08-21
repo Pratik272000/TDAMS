@@ -108,13 +108,18 @@ public class DaywiseOrderService {
 
 	public List<OrderTiffinDetailsDto> Countpending() {
 //	long count=daywiseOrderDao.count();
+		// find all daywise order
 		List<DaywiseOrder> x = daywiseOrderDao.findAll();
 		HashMap<Integer, Integer> count = new HashMap<>();
 		for (DaywiseOrder d : x) {
 			System.out.println(d.getStatus());
+			// see status equals to pending
 			if (d.getStatus().equals("pending")) {
+				// get the order from daywiseOrder
 				Order o = d.getOrder();
+				//  find tiffinId from orders table
 				int tiffin_id = o.getTiffinDetails().getTiffinId();
+				//  perticular tiffin_id  getOrDefault check the id is present if present then existing count +1 or return zero;
 				count.put(tiffin_id, count.getOrDefault(tiffin_id, 0) + 1);
 			}
 		}

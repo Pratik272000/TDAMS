@@ -8,6 +8,7 @@ import com.app.entities.TiffinDetail;
 
 public interface TiffinDetailDao extends JpaRepository<TiffinDetail, Integer> {
 
+//	TiffinDetail findByTiffinId(int tiffinId);
 	TiffinDetail findByTiffinId(int tiffinId);
 
 	List<TiffinDetail> findAll();

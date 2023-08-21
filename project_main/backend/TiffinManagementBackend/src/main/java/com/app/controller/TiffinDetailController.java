@@ -35,10 +35,15 @@ public class TiffinDetailController {
 	@Autowired
 	private OrderService orderService;
 	
-	@GetMapping("/tiffinDetail/{id}")
+	/*@GetMapping("/tiffinDetail/{id}")
 	public ResponseEntity<?> displayTiffinDetailById(@PathVariable("id") int id) {
 		TiffinDetailDto tiffinDetailDto = tiffinDetailService.findTiffinById(id);
 		return Response.success(tiffinDetailDto);
+	}*/
+	@GetMapping("/tiffinDetails/{id}")
+	public ResponseEntity<?> displayTiffinDetailById(@PathVariable("id") int id){
+		 TiffinDetailDto tiffinDetailsDto = tiffinDetailService.findTiffinById(id);
+		 return Response.success(tiffinDetailsDto);
 	}
 	
 	@GetMapping("/tiffin/details")
@@ -55,6 +60,8 @@ public class TiffinDetailController {
 		tiffinDetailService.saveTiffinDetails(tiffin);
 		return Response.success(tiffin);
 	}
+	
+	
 	
 	@PutMapping("/tiffin/updateTiffin/{id}")
 	public ResponseEntity<?> updateTiffinById(@PathVariable("id") int id, @RequestBody TiffinDetailDto details) {

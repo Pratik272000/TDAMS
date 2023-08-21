@@ -66,7 +66,7 @@ public class UserService {
 		List<User> list = userDao.findAll();
 		List<UserDto> dlist = new ArrayList<UserDto>();
 		for (User u : list) {
-			if (u.getRole().equals("ROLE_DELIVERYBOY"))
+			if (u.getRole().equals("Delivery_Boy"))
 				dlist.add(converter.toUserDto(u));
 		}
 		return dlist;
