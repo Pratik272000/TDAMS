@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.dtos.Response;
 import com.app.dtos.UserDto;
 import com.app.entities.User;
+import com.app.services.DaywiseOrderService;
 import com.app.services.UserService;
 
 @CrossOrigin(origins = "*")
@@ -23,6 +24,8 @@ public class AdminController {
 private ModelMapper mapper;
 @Autowired 
 private UserService userService;
+@Autowired
+private DaywiseOrderService daywiseOrderService;
 @GetMapping("/DeliveryBoys")
 public ResponseEntity<?> findalldeliveryBoys(){
 	return Response.success(userService.DeliveryBoysList());
@@ -49,8 +52,8 @@ public ResponseEntity<?> deleteCustomer(@PathVariable("userId") int userId) {
 public ResponseEntity<?> getAllCustomers(){
 	return Response.success(userService.getAllCustomers());
 }
-//@GetMapping("/ActiveCutomer")
-//public ResponseEntity<?> ActiveCustomerList(){
-//	return Response.success(daywiseOrderService.getAllActiveUsers());
-//}
+@GetMapping("/ActiveCutomer")
+public ResponseEntity<?> ActiveCustomerList(){
+	return Response.success(daywiseOrderService.getAllActiveUsers());
+}
 }
