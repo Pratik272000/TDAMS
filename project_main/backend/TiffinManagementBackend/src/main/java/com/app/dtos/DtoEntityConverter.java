@@ -111,14 +111,7 @@ public class DtoEntityConverter {
 		return dto;
 	}
 
-	public DeliveryAddressDto toDeliveryAddressDto(DeliveryAddress entity) {
-		DeliveryAddressDto dto = new DeliveryAddressDto();
-		dto.setLocationId(entity.getLocationId());
-		dto.setDeliveryArea(entity.getDeliveryArea());
-		dto.setCity(entity.getCity());
-		dto.setPinCode(entity.getPinCode());
-		return dto;
-	}
+	
 
 	public UserAddress toUserAddress(UserAddressDto dto) {
 		UserAddress entity = new UserAddress();
@@ -170,5 +163,14 @@ public class DtoEntityConverter {
 		if (tiffinDto.getTiffinImage() != null)
 			tiffin.setTiffinImage(tiffinDto.getTiffinImage().getOriginalFilename());
 		return tiffin;
+	}
+
+	public DeliveryAddressDto toDeliveryAddressDto(DeliveryAddress entity) {
+		DeliveryAddressDto dto = new DeliveryAddressDto();
+		dto.setLocationId(entity.getLocationId());
+		dto.setDeliveryArea(entity.getDeliveryArea());
+		dto.setCity(entity.getCity());
+		dto.setPinCode(entity.getPinCode());
+		return dto;
 	}
 }

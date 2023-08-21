@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class DeliveryAddressDto {
 
-	private int locationId;
+	private int locationId ;
 	private String deliveryArea;
 	private String city;
 	private int pinCode;
