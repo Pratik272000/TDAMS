@@ -1,0 +1,20 @@
+package com.app.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.app.dao.UserDao;
+import com.app.entities.User;
+
+public class UserService {
+	@Autowired
+	private UserDao userDao;
+	
+
+	public User findUserById(int id) {
+		// TODO Auto-generated method stub
+		return userDao.findByUserId(id);
+		
+		
+	}
+
+}
