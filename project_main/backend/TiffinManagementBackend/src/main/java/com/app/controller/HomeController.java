@@ -1,5 +1,7 @@
 package com.app.controller;
 
+//import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 //import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 //import org.springframework.security.core.Authentication;
 //import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -72,10 +75,10 @@ public class HomeController {
 //	}
 //	
 //	
-//	@GetMapping("/roles")
-//	public ResponseEntity<?> getAllRoles() {
-//		return Response.success(userService.getUserRoles());
-//	}
+	@GetMapping("/roles")
+	public ResponseEntity<?> getAllRoles() {
+		return Response.success(userService.getUserRoles());
+	}
 	
 	
 	

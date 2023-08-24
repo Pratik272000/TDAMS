@@ -48,10 +48,11 @@ public class UserService {
 	}
 
 	public UserDto findUserByCredential(Credential cr) {
+		
 		User u = userDao.findByEmail(cr.getEmail());
 
 		if (u.getPassword().equals(cr.getPassword())) {
-			System.out.print(u);
+			System.out.println("Password found correct");
 			return converter.toUserDto(u);
 		}
 		return null;
