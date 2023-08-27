@@ -1,8 +1,0 @@
-package com.app.services;
-
-public class Snippet {
-	public static void main(String[] args) {
-		{disk.upload.basepat
-	}
-}
-
